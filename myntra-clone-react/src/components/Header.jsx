@@ -1,25 +1,30 @@
+import { MdPerson } from "react-icons/md";
+import { FaHeartCirclePlus } from "react-icons/fa6";
+import { LuShoppingBag } from "react-icons/lu";
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <>
       <header>
         <div className="logo_container">
-          <a href="#">
+          <Link to="/">
             <img
               className="myntra_home"
               src="images/myntra_logo.webp"
               alt="Myntra Home"
             />
-          </a>
+          </Link>
         </div>
         <nav className="nav_bar">
-          <a href="#">Men</a>
-          <a href="#">Women</a>
-          <a href="#">Kids</a>
-          <a href="#">Home & Living</a>
-          <a href="#">Beauty</a>
-          <a href="#">
+          <Link to="/">Men</Link>
+          <Link to="/">Women</Link>
+          <Link to="/">Kids</Link>
+          <Link to="/">Home & Living</Link>
+          <Link to="/">Beauty</Link>
+          <Link to="/">
             Studio <sup>New</sup>
-          </a>
+          </Link>
         </nav>
         <div className="search_bar">
           <span className="material-symbols-outlined search_icon">search</span>
@@ -30,26 +35,21 @@ const Header = () => {
         </div>
         <div className="action_bar">
           <div className="action_container">
-            <span className="material-symbols-outlined action_icon">
-              person
-            </span>
+            <MdPerson />
             <span className="action_name">Profile</span>
           </div>
 
           <div className="action_container">
-            <span className="material-symbols-outlined action_icon">
-              favorite
-            </span>
+            <FaHeartCirclePlus />
+
             <span className="action_name">Wishlist</span>
           </div>
 
-          <a className="action_container" href="pages/bag.html">
-            <span className="material-symbols-outlined action_icon">
-              shopping_bag
-            </span>
+          <Link className="action_container" to="/bag">
+            <LuShoppingBag />
             <span className="action_name">Bag</span>
             <span className="bag-item-count">0</span>
-          </a>
+          </Link>
         </div>
       </header>
     </>
