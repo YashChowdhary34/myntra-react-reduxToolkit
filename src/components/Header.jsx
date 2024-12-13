@@ -1,9 +1,12 @@
 import { MdPerson } from "react-icons/md";
 import { FaHeartCirclePlus } from "react-icons/fa6";
-import { LuShoppingBag } from "react-icons/lu";
+import { FaShoppingBag } from "react-icons/fa";
+
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const bag = useSelector((store) => store.bag);
   return (
     <>
       <header>
@@ -46,9 +49,9 @@ const Header = () => {
           </div>
 
           <Link className="action_container" to="/bag">
-            <LuShoppingBag />
+            <FaShoppingBag />
             <span className="action_name">Bag</span>
-            <span className="bag-item-count">0</span>
+            <span className="bag-item-count">{bag.length}</span>
           </Link>
         </div>
       </header>
